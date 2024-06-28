@@ -19,20 +19,21 @@ const Home = () => {
         }
     };
 
-        // Función para desplazarse suavemente hasta el componente CardProgressBar
-        function scrollToCardProgressBar() {
-            const element = document.getElementById('cardProgressBar');
-            if (element) {
-                element.scrollIntoView({ behavior: 'smooth', block: 'center'  });
-            }
+    // Función para desplazarse suavemente hasta el componente CardProgressBar
+    function scrollToCardProgressBar() {
+        const element = document.getElementById('cardProgressBar');
+        if (element) {
+            element.scrollIntoView({ behavior: 'smooth', block: 'center' });
         }
+    }
 
-    return(
+
+    return (
         <div className="w-full h-full flex flex-col items-center justify-center">
             <p className='flex justify-center font-bold text-center text-4xl w-full'>Track your order</p>
             <TextInput
-                className='w-64 h-12 z-20 my-4' 
-                icon={RiSearchLine}  
+                className='w-64 h-12 z-20 my-4 text-lg'
+                icon={RiSearchLine}
                 placeholder='Find your tracking number...'
                 onChange={(e) => setInputValue(e.target.value)} // Actualiza inputValue con cada cambio
                 onKeyDown={handleKeyDown} // Maneja la tecla Enter
@@ -46,4 +47,4 @@ const Home = () => {
     )
 }
 
-export {Home}
+export { Home }
