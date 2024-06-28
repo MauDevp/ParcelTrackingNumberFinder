@@ -8,7 +8,7 @@ const Home = () => {
     const [busqueda, setBusqueda] = useState('')
     const [inputValue, setInputValue] = useState('');
 
-    const trackingNumber = '061626mau';
+    const trackingNumber = '14344YONCIOXT';
     const value = 1;
 
     const handleKeyDown = (e) => {

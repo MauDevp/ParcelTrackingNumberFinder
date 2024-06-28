@@ -93,8 +93,8 @@ ColorlibStepIcon.propTypes = {
 }; 0
 
 const steps = [
-    { label: 'Reviewing', date: '23/01/01', time: '10:50'},
-    { label: 'Ordered', date: '23/01/02', time: '17:56'},
+    { label: 'Reviewing', date: '05/06/24', time: '10:50'},
+    { label: 'Ordered', date: '27/06/24', time: '17:56'},
     { label: 'Transit', date: null, time: null },
     { label: 'Delivered', date: null, time: null }
 ];
