@@ -8,6 +8,8 @@ import LocalShippingIcon from '@mui/icons-material/LocalShipping';
 import InventoryOutlinedIcon from '@mui/icons-material/InventoryOutlined';
 import HomeOutlinedIcon from '@mui/icons-material/HomeOutlined';
 import StepConnector, { stepConnectorClasses } from '@mui/material/StepConnector';
+import QueryBuilderIcon from '@mui/icons-material/QueryBuilder';
+import CalendarTodayIcon from '@mui/icons-material/CalendarToday';
 
 const ColorlibConnector = styled(StepConnector)(({ theme }) => ({
     [`&.${stepConnectorClasses.alternativeLabel}`]: {
@@ -90,19 +92,38 @@ ColorlibStepIcon.propTypes = {
     icon: PropTypes.node,
 }; 0
 
-const steps = ['Reviewing', 'Ordered', 'Transit', 'Delivered' ];
+const steps = [
+    { label: 'Reviewing', date: '23/01/01', time: '10:50'},
+    { label: 'Ordered', date: '23/01/02', time: '17:56'},
+    { label: 'Transit', date: null, time: null },
+    { label: 'Delivered', date: null, time: null }
+];
 
 // eslint-disable-next-line react/prop-types
-const ProgressBar = ( {value} ) => {
+const ProgressBar = ({ value }) => {
     return (
         <Stepper alternativeLabel activeStep={value} connector={<ColorlibConnector />}>
-            {steps.map((label) => (
-                <Step key={label}>
-                    <StepLabel StepIconComponent={ColorlibStepIcon}>{label}</StepLabel>
+            {steps.map((step) => (
+                <Step key={step.label}>
+                    <StepLabel className='w-[4rem]' StepIconComponent={ColorlibStepIcon}>{step.label}</StepLabel>
+                    {
+                        step.date && step.time ?
+                            <div className='flex flex-row items-center justify-center my-1'>
+                                <div className='flex flex-col items-center justify-center mr-1 gap-1'>
+                                    <CalendarTodayIcon sx={{ fontSize: 12 }}/>
+                                    <QueryBuilderIcon sx={{ fontSize: 12 }}/>
+                                </div>
+                                <div className='flex flex-col items-start justify-center gap-1'>
+                                    <p className='font-light text-[10px]'>{step.date}</p> {/* Aquí renderizas la fecha */}
+                                    <p className='font-light text-[10px]'>{step.time}</p> {/* Aquí renderizas la fecha */}
+                                </div>
+                            </div> :
+                            null
+                    }
                 </Step>
             ))}
         </Stepper>
-    )
+    );
 }
 
 export { ProgressBar }

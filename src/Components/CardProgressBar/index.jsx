@@ -17,7 +17,7 @@ const CardProgressBar = ({ busqueda, trackingNumber, value}) => {
             <div>
                 {
                     busqueda === trackingNumber ?
-                    <div className='flex flex-col items-center justify-center mt-12 bg-[#fcdf22] rounded-lg w-[84vw] h-52'>
+                    <div className='flex flex-col items-center justify-center mt-12 bg-[#fcdf22] rounded-lg w-[92vw] h-52'>
                         <p className='mb-6'>
                             <span className='font-normal text-xl'>Tracking number:</span>
                             <span className='mx-2 font-bold text-lg border-b-2 border-[#041b27]'>{busqueda}</span>
@@ -25,7 +25,7 @@ const CardProgressBar = ({ busqueda, trackingNumber, value}) => {
                         <ProgressBar value={value} /> 
                     </div> :
                     busqueda !== '' ?
-                        <div className='flex flex-col items-center justify-center mt-12 bg-[#fcdf22] rounded-lg w-[84vw] h-52'>
+                        <div className='flex flex-col items-center justify-center mt-12 bg-[#fcdf22] rounded-lg w-[92vw] h-52'>
                             <div className='flex flex-col items-center justify-center text-center px-6'>
                                 <p className='font-normal text-lg'>Your tracking number 
                                     <span className='mx-2 font-bold text-lg border-b-2 border-[#041b27]'>{busqueda}</span>
